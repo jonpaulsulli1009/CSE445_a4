@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:htl="https://github.com/jonpaulsulli1009/CSE445_a4/blob/main/Hotles.xsd">
+  <htl:Hotels>
+    <htl:Hotel htl:Rating="3.9">
+      <htl:Name>Double Tree Suites by Hilton Hotle Phoenix</htl:Name>
+      <htl:Phone>602-225-0500</htl:Phone>
+      <htl:Address htl:NearestAirport="Sky Harbor">
+        <htl:Number>320</htl:Number>
+        <htl:Street>N 44th St.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85008</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel>
+      <htl:Name>Hampton Inn Phoenix Airpot Notrth</htl:Name>
+      <htl:Phone>602-267-0606</htl:Phone>
+      <htl:Address htl:NearestAirport="Sky Harbor">
+        <htl:Number>601</htl:Number>
+        <htl:Street>N 44th St.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85008</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel htl:Rating="4.3">
+      <htl:Name>Marriott Phoenix Airport</htl:Name>
+      <htl:Phone>602-273-7373</htl:Phone>
+      <htl:Phone>123-456-2468</htl:Phone>
+      <htl:Phone>246-135-9876</htl:Phone>
+      <htl:Address htl:NearestAirport="Sky Harbor">
+        <htl:Number>1101</htl:Number>
+        <htl:Street>N 44th St.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85008</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel htl:Rating="4.4">
+      <htl:Name>Holiday Inn and Suites Scottsdale North</htl:Name>
+      <htl:Phone>480-922-6500</htl:Phone>
+      <htl:Address htl:NearestAirport="Scottsdale Airport">
+        <htl:Number>14255</htl:Number>
+        <htl:Street>N 87th St.</htl:Street>
+        <htl:City>Scottsdale</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85260</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel>
+      <htl:Name>Extended Stay America Suites Phoenix Scottsdale</htl:Name>
+      <htl:Phone>480-483-1333</htl:Phone>
+      <htl:Address htl:NearestAirport="Scottsdale Airport">
+        <htl:Number>10660</htl:Number>
+        <htl:Street>N 69th St.</htl:Street>
+        <htl:City>Scottsdale</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85254</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel htl:Rating="3.2">
+      <htl:Name>Days Inn by Wyndham Phoenix North</htl:Name>
+      <htl:Phone>623-434-5500</htl:Phone>
+      <htl:Address htl:NearestAirport="Deer Vally Airport">
+        <htl:Number>21636</htl:Number>
+        <htl:Street>N 26th Ave.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85027</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel
+      <htl:Name>Hilton Garden Inn Phoenix North Happy Vally</htl:Name>
+      <htl:Phone>623-434-5556</htl:Phone>
+      <htl:Address htl:NearestAirport="Deer Vally Airport">
+        <htl:Number>1940</htl:Number>
+        <htl:Street>W Pinnacle Peak Rd.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85027</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel htl:Rating="4.1">
+      <htl:Name>Best Western InnSuites Phoenix Hotel and Suites</htl:Name>
+      <htl:Phone>602-997-6285</htl:Phone>
+      <htl:Address htl:NearestAirport="Scottsdale Airport">
+        <htl:Number>1615</htl:Number>
+        <htl:Street>E Northern Ave</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85020</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel>
+      <htl:Name>The Clarendon Hotel and Spa</htl:Name>
+      <htl:Phone>602-252-7363</htl:Phone>
+      <htl:Address htl:NearestAirport="Sky Harbor">
+        <htl:Number>401</htl:Number>
+        <htl:Street>W Clarendon Ave.</htl:Street>
+        <htl:City>Phoenix</htl:City>
+        <htl:State>AX</htl:State>
+        <htl:Zip>85013</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+    <htl:Hotel htl:Rating="3.9">
+      <htl:Name>WoodSpring Suites Mesa Chandler</htl:Name>
+      <htl:Phone>480-351-0610</htl:Phone>
+      <htl:Address htl:NearestAirport="Sky Harbor">
+        <htl:Number>404</htl:Number>
+        <htl:Street>E Baseline Rd.</htl:Street>
+        <htl:City>Mesa</htl:City>
+        <htl:State>AZ</htl:State>
+        <htl:Zip>85204</htl:Zip>
+      </htl:Address>
+    </htl:Hotel>
+  </htl:Hotles>
+</root>
