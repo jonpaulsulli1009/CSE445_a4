@@ -29,7 +29,7 @@ namespace ConsoleApp1
         private static bool errorFree;
         private static StringBuilder errorString = new StringBuilder();
         private static int errorCount = 0;
-        List<Hotel> myHotels;
+        private static List<Hotel> myHotels;
 
         public static void Main(string[] args)
         {
@@ -169,6 +169,7 @@ namespace ConsoleApp1
     }
 
 }
+
 
 
 
