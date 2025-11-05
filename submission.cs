@@ -22,9 +22,9 @@ namespace ConsoleApp1
     public class Program
     {
         //set up the urls
-        public static string xmlURL = "https://jonpaulsulli1009.github.io/CSE445_a4/Hotels.xml"; //Q1.2 
-        public static string xmlErrorURL = "https://jonpaulsulli1009.github.io/CSE445_a4/HotelsErrors.xml"; //Q1.3
-        public static string xsdURL = "https://jonpaulsulli1009.github.io/CSE445_a4/Hotels.xsd"; //Q1.1
+        public static string xmlURL = "https://jonpaulsulli1009.github.io/CSE445_P4try2/Hotels.xml"; //Q1.2 
+        public static string xmlErrorURL = "https://jonpaulsulli1009.github.io/CSE445_P4try2/HotelsErrors.xml"; //Q1.3
+        public static string xsdURL = "https://jonpaulsulli1009.github.io/CSE445_P4try2/Hotels.xsd"; //Q1.1
         //added some vars
         private static bool errorFree;
         private static StringBuilder errorString = new StringBuilder();
@@ -169,6 +169,7 @@ namespace ConsoleApp1
     }
 
 }
+
 
 
 
