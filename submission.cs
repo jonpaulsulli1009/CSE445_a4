@@ -3,6 +3,8 @@ using System.Xml.Schema;
 using System.Xml;
 using Newtonsoft.Json;
 using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 
@@ -24,8 +26,10 @@ namespace ConsoleApp1
         public static string xmlErrorURL = "https://jonpaulsulli1009.github.io/CSE445_a4/HotelsErrors.xml"; //Q1.3
         public static string xsdURL = "https://jonpaulsulli1009.github.io/CSE445_a4/Hotels.xsd"; //Q1.1
         //added some vars
-        private static stringBuilder errorString = new StringBuilder();
+        private static bool errorFree;
+        private static StringBuilder errorString = new StringBuilder();
         private static int errorCount = 0;
+        List<Hotel> myHotels;
 
         public static void Main(string[] args)
         {
@@ -46,8 +50,8 @@ namespace ConsoleApp1
         {
             //Setup xml schema set, xml reader setting and vars
             XmlSchemaSet xss = new XmlSchemaSet();
-            XmlReaderSetting xrs = new XmlReaderSettings();
-            bool errorFree = true;
+            XmlReaderSettings xrs = new XmlReaderSettings();
+            errorFree = true;
             errorCount = 0;
             errorString.Clear();
 
@@ -57,14 +61,14 @@ namespace ConsoleApp1
             
                 //fix the reader settings and give it the schema
                 xrs.ValidationType = ValidationType.Schema;
-                xrs.Schemas = xxs;
+                xrs.Schemas = xss;
 
                 //add my callback
                 xrs.ValidationEventHandler += new ValidationEventHandler(MyValidationCallBack);
 
                 //make a reader and read the xml
-                xmlReader xr = XmlReaer.Create(xmlUrl,xrs);
-                while(reader.Read());
+                XmlReader xr = XmlReader.Create(xmlUrl,xrs);
+                while(xr.Read());
             }
             
             Console.WriteLine("validation complete");
@@ -72,20 +76,26 @@ namespace ConsoleApp1
             if(errorFree){
                 return "No Error";
             }else{
-                return errorString.toString();
+                return errorString.ToString();
             }
         }
+
+        private static void MyValidationCallBack(object sender, ValidationEventArgs e){
+            errorFree = false;
+            errorCount++;
+            errorString.Append("Error {errorCount}: {e.Message}\n");
+        } 
 
         public static string Xml2Json(string xmlUrl)
         {
             //get stuff ready
-            XmlReader xr = new XmlReader(xmlUrl);
-            List<Hotel> myHotels = new List<Hotel>();
-            Hotel curHotel;
-            Address curAddr;
-            List<Phone> curPhones;
+            XmlReader xr = XmlReader.Create(xmlUrl);
+            myHotels = new List<Hotel>();
+            Hotel curHotel = null;
+            Address curAddr = null;
+            List<String> curPhones = null;
             //start reading
-            while(xr.read()){
+            while(xr.Read()){
                 if(xr.NodeType == XmlNodeType.Element && xr.Name == "Hotel"){
                     curHotel = new Hotel();
                     curAddr = new Address();
@@ -94,52 +104,51 @@ namespace ConsoleApp1
                     while(hotelSub.Read()){
                         switch(hotelSub.Name){
                             case "Name":
-                            curHotel.name = hotelSub.ReadElementContentAsString();
-                            break;
+                                curHotel.name = hotelSub.ReadElementContentAsString();
+                                break;
                             case "Phone":
-                            curHotel.phones.Add(hotelSub.ReadElementContentAsString());
-                            break;
+                                curHotel.phones.Add(hotelSub.ReadElementContentAsString());
+                                break;
                             case "Address":
-                            curAddr.nearair = hotelSub.GetAttribute("NearestAirport");
-                            xmlReader addrSub = hotelSub.ReadSubtree();
-                            while(addrSub.Read()){
-                                switch(addrSub.Name){
-                                    case "Number":
-                                    curAddr.snumber = addrSub.ReadElementContentAsString();
-                                    break;
-                                    case "Street":
-                                    curAddr.snumber = addrSub.ReadElementContentAsString();
-                                    break;
-                                    case "City":
-                                    curAddr.snumber = addrSub.ReadElementContentAsString();
-                                    break;
-                                    case "State":
-                                    curAddr.snumber = addrSub.ReadElementContentAsString();
-                                    break;
-                                    case "Zip":
-                                    curAddr.snumber = addrSub.ReadElementContentAsString();
-                                    break;
-                            }
-                            break;
+                                curAddr.nearair = hotelSub.GetAttribute("NearestAirport");
+                                using(xmlReader addrSub = hotelSub.ReadSubtree()){
+                                    while(addrSub.Read()){
+                                        switch(addrSub.Name){
+                                            case "Number":
+                                                curAddr.snumber = addrSub.ReadElementContentAsString();
+                                                break;
+                                            case "Street":
+                                                curAddr.snumber = addrSub.ReadElementContentAsString();
+                                                break;
+                                            case "City":
+                                                curAddr.snumber = addrSub.ReadElementContentAsString();
+                                                break;
+                                            case "State":
+                                                curAddr.snumber = addrSub.ReadElementContentAsString();
+                                                break;
+                                            case "Zip":
+                                                curAddr.snumber = addrSub.ReadElementContentAsString();
+                                                break;
+                                        }
+                                    }
+                                }
+                                break;
                         }
                     }     
-                }else if(xr.NodeType == XmlNodeType.EndElement && xr.Name == "Hotel"){
+                } else if (xr.NodeType == XmlNodeType.EndElement && xr.Name == "Hotel"){
                     curHotel.phones = curPhones;
                     curHotel.addr = curAddr;
-                    myHotles.add(curHotel);
+                    myHotles.Add(curHotel);
                 {
             }
+            Hotels allHotels = new Hotels();
+            allHotels.Hotel = myHotels;
             JsonSerializerOptions options = new JsonSerializerOptions{WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull};
-            string jsonText = JsonSerializer.Serialize(rootObject, options);
+            string jsonText = JsonSerializer.Serialize(allHotels, options);
             // The returned jsonText needs to be de-serializable by Newtonsoft.Json package. (JsonConvert.DeserializeXmlNode(jsonText))
             return jsonText;
 
         }
-        private static void MyValidationCallBack(object sender, ValidationEventArgs e){
-            errorFree = false;
-            errorCount++;
-            errorString.append("Error {0}: {1}\n", errorCount ,e.Message);
-        } 
         private class Hotels{
             public List<Hotel> Hotel;
         }
@@ -160,5 +169,6 @@ namespace ConsoleApp1
     }
 
 }
+
 
 
