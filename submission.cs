@@ -98,6 +98,7 @@ namespace ConsoleApp1
             while(xr.Read()){
                 if(xr.NodeType == XmlNodeType.Element && xr.Name == "Hotel"){
                     curHotel = new Hotel();
+                    curPhones = new List<string>();
                     curAddr = new Address();
                     curHotel.rate = xr.GetAttribute("Rating");
                     XmlReader hotelSub = xr.ReadSubtree();
@@ -169,6 +170,7 @@ namespace ConsoleApp1
     }
 
 }
+
 
 
 
