@@ -39,6 +39,7 @@
     <htl:Hotel htl:Rating="4.4">
       <htl:Name>Holiday Inn and Suites Scottsdale North</htl:Name>
       <htl:Phone>480-922-6500</htl:Phone>
+      <htl:Phone>888-888-8887</htl:Phone>
       <htl:Address htl:NearestAirport="Scottsdale Airport">
         <htl:Number>14255</htl:Number>
         <htl:Street>N 87th St.</htl:Street>
@@ -50,6 +51,10 @@
     <htl:Hotel>
       <htl:Name>Extended Stay America Suites Phoenix Scottsdale</htl:Name>
       <htl:Phone>480-483-1333</htl:Phone>
+      <htl:Phone>888-888-7778</htl:Phone>
+      <htl:Phone>888-777-7890</htl:Phone>
+      <htl:Phone>444-555-6666</htl:Phone>
+      <htl:Phone>888-999-0000</htl:Phone>
       <htl:Address htl:NearestAirport="Scottsdale Airport">
         <htl:Number>10660</htl:Number>
         <htl:Street>N 69th St.</htl:Street>
@@ -94,6 +99,7 @@
     <htl:Hotel>
       <htl:Name>The Clarendon Hotel and Spa</htl:Name>
       <htl:Phone>602-252-7363</htl:Phone>
+      <htl:Phone>123-321-9876</htl:Phone>
       <htl:Address htl:NearestAirport="Sky Harbor">
         <htl:Number>401</htl:Number>
         <htl:Street>W Clarendon Ave.</htl:Street>
@@ -105,6 +111,13 @@
     <htl:Hotel htl:Rating="3.9">
       <htl:Name>WoodSpring Suites Mesa Chandler</htl:Name>
       <htl:Phone>480-351-0610</htl:Phone>
+      <htl:Phone>111-111-1111</htl:Phone>
+      <htl:Phone>222-111-1111</htl:Phone>
+      <htl:Phone>333-222-1111</htl:Phone>
+      <htl:Phone>444-333-2222</htl:Phone>
+      <htl:Phone>555-444-3333</htl:Phone>
+      <htl:Phone>666-555-4444</htl:Phone>
+      <htl:Phone>777-666-5555</htl:Phone>
       <htl:Address htl:NearestAirport="Sky Harbor">
         <htl:Number>404</htl:Number>
         <htl:Street>E Baseline Rd.</htl:Street>
