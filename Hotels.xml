@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Hotels xmlns:htl="https://github.com/jonpaulsulli1009/CSE445_a4/blob/main/Hotles.xsd">
+<Hotels xmlns:htl="https://jonpaulsulli1009.github.io/CSE445_a4/Hotels.xsd">
   <htl:Hotel htl:Rating="3.9">
     <htl:Name>Double Tree Suites by Hilton Hotle Phoenix</htl:Name>
     <htl:Phone>602-225-0500</htl:Phone>
